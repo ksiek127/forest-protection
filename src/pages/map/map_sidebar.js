@@ -4,26 +4,38 @@ import "../../style/global.css";
 import "../../style/map_sidebar.css";
 
 class MapSidebar extends Component {
+    forestName = "Las";
+
 	constructor() {
 		super();
+        this.readJson();
 	}
+
+    readJson = function(){
+        fetch('config.json')
+        .then(response => {
+            return response.json();
+        }).then((data) => {
+            console.log(data);
+        })
+    }
 
 	render() {
 		return(
 			<div className="mapSidebarContainer">
-                <h1 className="forestName">Las Pisarzowski</h1>
+                <h1 className="forestName">{this.forestName}</h1>
                 <ul className="checkboxList">
                     <li>
                         <input type="checkbox" name="sensorType"/>
-                        <label for="sensorType">Typ czujki</label>
+                        <label htmlFor="sensorType">Typ czujki</label>
                     </li>
                     <li>
                         <input type="checkbox" name="firefightersPosition"/>
-                        <label for="firefightersPosition">Pozycja strażaków</label>
+                        <label htmlFor="firefightersPosition">Pozycja strażaków</label>
                     </li>
                     <li>
                         <input type="checkbox" name="forestType"/>
-                        <label for="forestType">Typ lasu</label>
+                        <label htmlFor="forestType">Typ lasu</label>
                     </li>
                 </ul>
                 <div className="sidebarButtons">

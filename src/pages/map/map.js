@@ -6,9 +6,9 @@ import "../../style/map.css";
 import Sector from "../sector/sector";
 
 class Map extends Component {
-  // constructor(){
-  //   super();
-  // }
+  constructor(){
+    super();
+  }
 
   render() {
     return (

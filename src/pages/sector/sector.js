@@ -6,6 +6,7 @@ import collapse from "../../images/collapse.png";
 import Map from "../map/map";
 import { BrowserRouter as Router, Link, Route, Switch } from "react-router-dom";
 import App from "..";
+import plot from "../../images/plot.png";
 
 class Sector extends Component{
     constructor(){
@@ -27,7 +28,7 @@ class Sector extends Component{
                                 </div>
                                 <image className="collapse">
                                     <Link to={"/"}>
-                                        <img src={collapse} alt="X"></img>
+                                        <img className="collapseIcon" src={collapse} alt="X"></img>
                                     </Link>
                                 </image>
                             </div>
@@ -42,7 +43,7 @@ class Sector extends Component{
                                 </ul>
                             </div>
                             <div className="chart">
-
+                                <img src={plot} alt="chart"></img>
                             </div>
                             <ul className="parameters">
                                 <li>Temperatura: 22°C</li>
@@ -55,7 +56,9 @@ class Sector extends Component{
                         </div> 
                     </Route>
                     <Route exact path="/">
-                        <App></App>
+                        <Link to={"/sector/sector"}>
+							<Map className="map"/>
+						</Link>
                     </Route>
                 </Switch>
             </Router>
