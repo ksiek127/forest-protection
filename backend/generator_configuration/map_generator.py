@@ -7,12 +7,6 @@ from json_formatter import *
 import sys
 from os.path import exists
 
-# name = "First Forest"
-# height = 15
-# width = 15
-# size = 1000
-# SECTORS = Sector
-
 
 def random_float(_from, _to, rounded: int) -> float:
     prefix = '{0:.' + str(rounded) + 'f}'
@@ -22,11 +16,31 @@ def random_float(_from, _to, rounded: int) -> float:
 class MapGenerator:
     def __init__(self, name, height, width, size):
         list_of_sectors = self.random_initial_sector(height, width)
+        list_of_sectors = self.empty_initial_sector(height, width)
         self.map = Map(forest_name=name,
                        height=height,
                        width=width,
                        sector_size=size,
                        sectors=list_of_sectors)
+
+    @staticmethod
+    def empty_initial_sector(height, width) -> list[Sector]:
+        list_of_sectors = []
+        for y in range(height):
+            for x in range(width):
+                list_of_sectors.append(
+                    Sector(sector_name=str(y) + "_" + str(x),
+                           position=[y, x],
+                           time=datetime.now().strftime("%d/%m/%Y %H:%M:%S"),
+                           level_of_threat="low",
+                           temperature=None,
+                           wind_direction=None,
+                           wind_speed=None,
+                           air_humidity=None,
+                           litter_moisture=None,
+                           aerosol_concentration=None,
+                           carbon_dioxide_concentration=None))
+        return list_of_sectors
 
     def random_initial_sector(self, height, width) -> list[Sector]:
         list_of_sectors = []
