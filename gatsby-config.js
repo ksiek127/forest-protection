@@ -1,4 +1,4 @@
-module.exports = {
+odule.exports = {
   siteMetadata: {
     title: `styrta sie pali`,
     siteUrl: `https://www.yourdomain.tld`
