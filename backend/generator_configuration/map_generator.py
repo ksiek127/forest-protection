@@ -29,7 +29,7 @@ class MapGenerator:
         for y in range(height):
             for x in range(width):
                 list_of_sectors.append(
-                    Sector(sector_name=str(y) + "_" + str(x),
+                    Sector(id=str(y) + "_" + str(x),
                            position=[y, x],
                            time=datetime.now().strftime("%d/%m/%Y %H:%M:%S"),
                            threat_level="none",
@@ -48,7 +48,7 @@ class MapGenerator:
         for y in range(height):
             for x in range(width):
                 list_of_sectors.append(
-                    Sector(sector_name=str(y) + "_" + str(x),
+                    Sector(id=str(y) + "_" + str(x),
                            position=[y, x],
                            time=datetime.now().strftime("%d/%m/%Y %H:%M:%S"),
                            threat_level=self.random_threat_level(),

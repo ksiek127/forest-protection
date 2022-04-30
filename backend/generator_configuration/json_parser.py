@@ -9,7 +9,7 @@ def parse_map(json_filename):
         json_map = json.load(file)
         sectors = []
         for sector in json_map['sectors']:
-            sectors.append(Sector(sector_name=sector['sector_name'],
+            sectors.append(Sector(id=sector['id'],
                                   position=sector['position'],
                                   time=sector['time'],
                                   threat_level=sector['threat_level'],
@@ -28,12 +28,12 @@ def parse_map(json_filename):
                    sectors=sectors)
 
 
-def parse_sector(json_filename, sector_name: str):
+def parse_sector(json_filename, id: str):
     with open(json_filename) as file:
         sectors = json.load(file)['sectors']
         for sector in sectors:
-            if sector['sector_name'] == sector_name:
-                return Sector(sector_name=sector['sector_name'],
+            if sector['id'] == id:
+                return Sector(id=sector['id'],
                               position=sector['position'],
                               time=sector['time'],
                               threat_level=sector['threat_level'],

@@ -3,7 +3,7 @@ from dataclasses import dataclass
 
 @dataclass
 class Sector:
-    sector_name: str
+    id: str
     position: [int, int]
     time: datetime.datetime
     threat_level: str # {none, low, medium, high} TODO uncompleted, probably more
