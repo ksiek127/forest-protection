@@ -9,14 +9,14 @@ def home():
            "./sector"
     return info
 
-@app.route('/map', methods=['GET', 'POST'])
+@app.route('/map', methods=['GET'])
 def map_view():
     directory_path = '../../utils/json_maps/filled_100x100.json' # TODO probably changed when we create some databases
     with open(directory_path) as file:
         return json.load(file)
     # name = request.args.get('forest_name')
 
-@app.route('/sector', methods=['GET', 'POST'])
+@app.route('/sector', methods=['GET'])
 def sector_view():
     directory_path = '../../utils/json_maps/filled_100x100.json'  # TODO probably changed when we create some databases
     with open(directory_path) as file:

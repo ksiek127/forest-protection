@@ -17,7 +17,7 @@ def parse_map(json_filename):
                                   wind_direction=sector['wind_direction'],
                                   wind_speed=sector['wind_speed'],
                                   air_humidity=sector['air_humidity'],
-                                  litter_moisture=sector['litter_moisture'],
+                                  plant_litter_moisture=sector['plant_litter_moisture'],
                                   aerosol_concentration=sector['aerosol_concentration'],
                                   carbon_dioxide_concentration=sector['carbon_dioxide_concentration']))
         # print(sectors)
@@ -41,7 +41,7 @@ def parse_sector(json_filename, sector_name: str):
                               wind_direction=sector['wind_direction'],
                               wind_speed=sector['wind_speed'],
                               air_humidity=sector['air_humidity'],
-                              litter_moisture=sector['litter_moisture'],
+                              plant_litter_moisture=sector['plant_litter_moisture'],
                               aerosol_concentration=sector['aerosol_concentration'],
                               carbon_dioxide_concentration=sector['carbon_dioxide_concentration'])
 
