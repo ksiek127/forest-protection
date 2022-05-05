@@ -1,4 +1,3 @@
-
 ### generating JSON file forest map
 
     ```\generator_configuration

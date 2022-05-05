@@ -15,7 +15,7 @@ def random_float(_from, _to, rounded: int) -> float:
 
 class MapGenerator:
     def __init__(self, name, height, width, size):
-        list_of_sectors = self.random_initial_sector(height, width)
+        # list_of_sectors = self.random_initial_sector(height, width)
         list_of_sectors = self.empty_initial_sector(height, width)
         self.map = Map(forest_name=name,
                        height=height,
@@ -29,15 +29,16 @@ class MapGenerator:
         for y in range(height):
             for x in range(width):
                 list_of_sectors.append(
-                    Sector(sector_name=str(y) + "_" + str(x),
+                    Sector(id=str(y) + "_" + str(x),
                            position=[y, x],
                            time=datetime.now().strftime("%d/%m/%Y %H:%M:%S"),
-                           level_of_threat="low",
+                           threat_level="none",
+                           state_of_fire="none",
                            temperature=None,
                            wind_direction=None,
                            wind_speed=None,
                            air_humidity=None,
-                           litter_moisture=None,
+                           plant_litter_moisture=None,
                            aerosol_concentration=None,
                            carbon_dioxide_concentration=None))
         return list_of_sectors
@@ -47,18 +48,24 @@ class MapGenerator:
         for y in range(height):
             for x in range(width):
                 list_of_sectors.append(
-                    Sector(sector_name=str(y) + "_" + str(x),
+                    Sector(id=str(y) + "_" + str(x),
                            position=[y, x],
                            time=datetime.now().strftime("%d/%m/%Y %H:%M:%S"),
-                           level_of_threat="low",
+                           threat_level=self.random_threat_level(),
+                           state_of_fire="none",
                            temperature=random_float(_from=15, _to=20, rounded=2),
                            wind_direction=self.random_wind_direction(),
                            wind_speed=random_float(_from=0, _to=1.5, rounded=2),
                            air_humidity=random_float(_from=40, _to=60, rounded=0),
-                           litter_moisture=random_float(_from=15, _to=45, rounded=0),
+                           plant_litter_moisture=random_float(_from=15, _to=45, rounded=0),
                            aerosol_concentration=random_float(_from=20, _to=80, rounded=0),
                            carbon_dioxide_concentration=random_float(_from=200, _to=400, rounded=0)))
         return list_of_sectors
+
+    @staticmethod
+    def random_threat_level() -> str:
+        threat_level = ["none", "low", "medium", "high"]
+        return threat_level[randint(0, len(threat_level) - 1)]
 
     @staticmethod
     def random_wind_direction() -> str:
