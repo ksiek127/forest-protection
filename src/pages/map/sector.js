@@ -15,7 +15,7 @@ class Sector extends Component{
             // <Router>
             //     <Link to={"/sector/sector/" + this.id}></Link>
             // </Router>
-            <Link to={"/sector/sector/" + this.sectorName}></Link>
+            <Link to={"/sector/sector/:" + this.sectorName}></Link>
         )
     }
 }

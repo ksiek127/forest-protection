@@ -5,8 +5,6 @@ import MapSidebar from "./map/map_sidebar";
 import "../style/global.css";
 import "../style/mainpage.css";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import { Link } from "gatsby";
-import Sector from "./sector/sector_details";
 
 class App extends Component { // TODO: put this in App.js
 	constructor() {

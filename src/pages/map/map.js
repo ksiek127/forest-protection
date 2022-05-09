@@ -4,7 +4,6 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import { Link } from "gatsby";
 import map from "../../images/map.jpg";
 import "../../style/map.css";
-import SectorDetails from "../sector/sector_details";
 import { forestData } from "../../config/config";
 import Sector from "./sector";
 
@@ -46,7 +45,7 @@ class Map extends Component {
             src={map}
           />
           <div className="sectorsContainer">
-            {this.sectorData.map((s) => (<Link className='sector' to={'/sector/sector_details/:' + s.sector_name} key={s.sector_name}></Link>))}
+            {this.sectorData.map((s) => (<Link className='sector' to={'/sector/' + s.sector_name} key={s.sector_name}></Link>))}
           </div>
         </div>
     );
