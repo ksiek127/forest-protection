@@ -45,7 +45,8 @@ class Map extends Component {
             src={map}
           />
           <div className="sectorsContainer">
-            {this.sectorData.map((s) => (<Link className='sector' to={'/sector/' + s.sector_name} key={s.sector_name}></Link>))}
+            {this.sectorData.map((s) => (<Link className='sector' to={'/sector/' + s.sector_name} key={s.sector_name}
+            style={{backgroundColor: s.level_of_threat == "low" ? "green" : s.level_of_threat == "moderate" ? "blue" : s.level_of_threat == "high" ? "yellow" : s.level_of_threat == "veryHigh" ? "orange" : s.level_of_threat == "extreme" ? "red" : "gray"}}></Link>))}
           </div>
         </div>
     );
