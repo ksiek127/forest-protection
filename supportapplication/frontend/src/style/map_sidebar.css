@@ -1,0 +1,38 @@
+.mapSidebarContainer{
+    display: flex;
+    flex-direction: column;
+    width: 25vw;
+    height: 100vh;
+}
+
+.forestName{
+    margin: 1em 0 0 0;
+    text-align: center;
+    width: 25vw;
+}
+
+.checkboxList{
+    box-sizing: border-box;
+    margin: 20% 50% 0 auto;
+    list-style: none;
+}
+
+.checkboxList li{
+    margin: 1em 0 0 0;
+}
+
+.checkboxList li label{
+    margin: 0 0 0 1em;
+}
+
+.sidebarButtons{
+    width: 15vw;
+    margin: 110% auto 5% auto;
+    display: flex;
+    justify-content: space-between;
+}
+
+.sidebarButtons button{
+    padding: 1em;
+    border: none;
+}
