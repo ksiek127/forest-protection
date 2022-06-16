@@ -1,0 +1,50 @@
+.sectorContainer{
+    width: 40vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.upperContainer{
+    display: flex;
+    justify-content: space-between;
+}
+
+.sectorHeader{
+    text-align: center;
+    margin: 0.8em 0 0 2em;
+}
+
+.chartNavbar ul{
+    list-style: none;
+    display: flex;
+    margin: 2em 1em 0 1em;
+}
+
+.chartNavbar ul li{
+    margin: 0.8em;
+}
+
+.collapse{
+    margin: 0 2em 0 0;
+}
+
+.collapseIcon{
+    width: 5vw;
+    height: 10vh;
+}
+
+.chart img{
+    width: 35vw;
+    height: 50vh;
+    margin: 2em 1em 0 1em;
+}
+
+.parameters{
+    list-style: none;
+    margin: 3em 0 0 2.5em;
+}
+
+.parameters li{
+    margin: 0 0 0.5em 0;
+}
