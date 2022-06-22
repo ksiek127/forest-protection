@@ -2,31 +2,23 @@ import * as React from "react";
 import { Component } from "react";
 import "../../style/global.css";
 import "../../style/map_sidebar.css";
-import { forestData } from "../../config/config";
 
 class MapSidebar extends Component {
     forestName = "Las";
 
 	constructor() {
 		super();
-        this.forestName = forestData.forest_name;
+        this.readJson();
 	}
 
-    // readJson = async function() {
-    //     const response = await fetch('config.json');
-    //     const data = await response.json();
-    //     console.log(data);
-    //     alert(data);
-    // }
-
-    // readJson = function(){
-    //     fetch('config.json')
-    //     .then(response => {
-    //         return response.json();
-    //     }).then((data) => {
-    //         console.log(data);
-    //     })
-    // }
+    readJson = function(){
+        fetch('config.json')
+        .then(response => {
+            return response.json();
+        }).then((data) => {
+            console.log(data);
+        })
+    }
 
 	render() {
 		return(
