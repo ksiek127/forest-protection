@@ -1,0 +1,10 @@
+{
+  "Width": 20,
+  "Height": 20,
+  "Scale": 4000,
+  "Map Events": {
+    "drought": 15,
+    "small rain": 4,
+    "drought": 20
+  }
+}
