@@ -44,12 +44,14 @@ jobs:
         with:
           generate-branches-badge: true
           jacoco-csv-file: supportapplication/backend/build/jacoco/test/jacocoTestReport.csv
+          badges-directory: .github/badges/backend
 
       - name: jacoco-badge-generator-simulation
         uses: cicirello/jacoco-badge-generator@v2.6.1
         with:
           generate-branches-badge: true
           jacoco-csv-file: GradleSimulation/simulation/build/jacoco/test/jacocoTestReport.csv
+          badges-directory: .github/badges/simulation
 
       - name: Commit and push the badge (if it changed)
         uses: EndBug/add-and-commit@v7
