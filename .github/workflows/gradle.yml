@@ -35,9 +35,9 @@ jobs:
           ./gradlew build
 
       - name: Build simulation with Gradle
-          run: |
-            cd GradleSimulation/simulation
-            ./gradlew build
+        run: |
+          cd GradleSimulation/simulation
+          ./gradlew build
 
       - name: jacoco-badge-generator-backend
         uses: cicirello/jacoco-badge-generator@v2.6.1
@@ -46,10 +46,10 @@ jobs:
           jacoco-csv-file: supportapplication/backend/build/jacoco/test/jacocoTestReport.csv
 
       - name: jacoco-badge-generator-simulation
-          uses: cicirello/jacoco-badge-generator@v2.6.1
-          with:
-            generate-branches-badge: true
-            jacoco-csv-file: GradleSimulation/simulation/build/jacoco/test/jacocoTestReport.csv
+        uses: cicirello/jacoco-badge-generator@v2.6.1
+        with:
+          generate-branches-badge: true
+          jacoco-csv-file: GradleSimulation/simulation/build/jacoco/test/jacocoTestReport.csv
 
       - name: Commit and push the badge (if it changed)
         uses: EndBug/add-and-commit@v7
